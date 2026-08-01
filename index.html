@@ -1,0 +1,261 @@
+<!doctype html>
+<!--
+  差し替え一覧(公開前に必ず埋める。出典は HQ_MARKETING_OS の
+  05_products/validating/fact_ledger_lp_20260731.md):
+  - 〔商品名〕            … 8/1中間集計後に運営者確定(現在は仮称「音声だけThreads運用キット 先行開発版」)
+  - 〔実績数字1〕〔期間1〕〔確認元1〕(〜3) … 8/1中間集計後(fact_ledger #10)
+  - 〔応募フォームURL〕    … 運営者がGoogleフォーム作成後(application_form_questions_20260731.md使用)
+  - 〔支払方法の確定文言〕 … 8/2 決済手段(Stripe決済リンク)確定後(fact_ledger #12)
+
+  未確定のまま残っている創作性の高い文言(共感パートの言い回し等)は
+  「hq_marketer/運営者確認要」とコメントで明記している。価格・返金条件・
+  特商法・募集条件5点・差別化の言い切り文は確定済み事実のため直書き。
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>〔商品名〕(先行開発版)</title>
+<style>
+  :root {
+    --ink: #23262b;
+    --ink-soft: #565b64;
+    --paper: #fbfaf7;
+    --accent: #b5652f;
+    --accent-deep: #8a4a1f;
+    --line: #e3ddd2;
+    --card: #ffffff;
+    --warn-bg: #fff6ea;
+    --warn-border: #e8c98f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
+    line-height: 1.85;
+    font-size: 16px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h1 { font-size: 1.6rem; line-height: 1.5; margin: 0 0 16px; }
+  h2 { font-size: 1.3rem; margin: 0 0 20px; }
+  p { margin: 0 0 16px; }
+  .kicker {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--accent-deep);
+    background: #f4e6d9;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 16px 28px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(138,74,31,0.25);
+  }
+  .cta-btn:hover { filter: brightness(1.05); }
+  .cta-row { text-align: center; margin: 28px 0 8px; }
+  .cta-note { text-align: center; font-size: 0.85rem; color: var(--ink-soft); margin-top: 10px; }
+  header.hero { background: #fff; padding-top: 44px; }
+  .price-line {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-deep);
+    margin: 0 0 6px;
+  }
+  .price-sub { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 20px; }
+  .fact-list { list-style: none; padding: 0; margin: 0; }
+  .fact-list li {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .fact-num { font-weight: 700; color: var(--accent-deep); }
+  .fact-meta { font-size: 0.8rem; color: var(--ink-soft); margin-top: 6px; }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .warn-box p:last-child { margin-bottom: 0; }
+  dl.faq dt {
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  dl.faq dt:first-child { margin-top: 0; }
+  dl.faq dd {
+    margin: 8px 0 0;
+    padding-left: 0;
+    color: var(--ink-soft);
+  }
+  ol.conditions { padding-left: 1.4em; }
+  ol.conditions li { margin-bottom: 10px; }
+  footer {
+    background: #2b2622;
+    color: #d9d3c8;
+    font-size: 0.85rem;
+  }
+  footer a { color: #f0c896; }
+  footer table { width: 100%; border-collapse: collapse; }
+  footer th, footer td {
+    text-align: left;
+    vertical-align: top;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  footer th { width: 34%; font-weight: 500; color: #b7ae9e; white-space: nowrap; }
+  @media (max-width: 480px) {
+    section { padding: 40px 0; }
+    h1 { font-size: 1.35rem; }
+    footer th { width: 40%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① ヘッダー: 3秒で何の商品か -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">先行開発版・3名限定</span>
+    <h1>〔商品名〕<br>音声を録るだけで、Threadsの発信が毎日仕組みで回り続ける。</h1>
+    <!-- hq_marketer/運営者確認要: ヘッダーコピーの言い回し。企画書の「商品の一言」をたたき台にした -->
+    <p>私が毎日実際に使っている仕組みそのものを、開発途中のまま3名だけに渡し、一緒に完成させます。</p>
+    <p class="price-line">4,980円(税込)</p>
+    <p class="price-sub">先行3名限定(状況により追加2名)。事例が出たら9,800円、安定後は19,800円へ値上げ予定。</p>
+    <div class="cta-row">
+      <a class="cta-btn" href="〔応募フォームURL〕" target="_blank" rel="noopener">今すぐ応募する →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ② 共感: H5=売りたいものがあるのに発信が止まる悩み -->
+<section>
+  <div class="wrap">
+    <h2>売りたいものがあるのに、発信が続かない。</h2>
+    <!-- hq_marketer/運営者確認要: 共感パートの本文。video_script_appeal_20260722.mdのトーン(一人称「僕」・
+         断定しない結び)をたたき台にした。実引用・実体験は本人確認のうえ差し替え可 -->
+    <p>商品やサービスは、もうある。なのに、投稿づくりに時間を取られて、発信が止まってしまう。
+      媒体ごとに作り直すのも大変で、気づいたら数日空いている——僕自身、ずっとそうでした。</p>
+    <p>これは、その悩みを解決するためだけに作っている仕組みです。</p>
+  </div>
+</section>
+
+<!-- ③ 信頼: 30日企画の公開実績(最大3件、出典・期間・確認元つき) -->
+<section>
+  <div class="wrap">
+    <h2>実際に、僕自身が毎日使っています。</h2>
+    <p>数字は良いものだけ選んで見せません。良化も悪化も、実測のみをそのまま出します。</p>
+    <ul class="fact-list">
+      <li>
+        <span class="fact-num">〔実績数字1〕</span>
+        <div class="fact-meta">期間: 〔期間1〕 / 確認元: 〔確認元1〕</div>
+      </li>
+      <li>
+        <span class="fact-num">〔実績数字2〕</span>
+        <div class="fact-meta">期間: 〔期間2〕 / 確認元: 〔確認元2〕</div>
+      </li>
+      <li>
+        <span class="fact-num">〔実績数字3〕</span>
+        <div class="fact-meta">期間: 〔期間3〕 / 確認元: 〔確認元3〕</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ④ 解決: 何が変わるか(差別化の言い切り文=確定済み事実) -->
+<section>
+  <div class="wrap">
+    <h2>AI教材は"作り方"を教える。<br>これはこちらが"作らなくていい状態"を届ける。</h2>
+    <p>だから、伴走と週次の個別改善があります。テンプレを渡して「あとは自分で組んでね」ではなく、
+      僕が今まさに毎日使っているものを、そのままあなたのAIハーネス(Claude Code等)に読み込ませて動かします。</p>
+    <p>毎日の作業は、音声を1本録ることだけ。文字起こし・下書き・検収・予約投稿・翌日への反映まで、
+      仕組みが引き受けます。</p>
+  </div>
+</section>
+
+<!-- ⑤ 応募ボタン(上部にも設置済み。1ページ1ゴール) -->
+<section>
+  <div class="wrap" style="text-align:center;">
+    <h2>先行3名だけ、一緒に完成させてくれる人を探しています。</h2>
+    <div class="cta-row">
+      <a class="cta-btn" href="〔応募フォームURL〕" target="_blank" rel="noopener">応募フォームへ進む →</a>
+    </div>
+    <p class="cta-note">応募後、募集条件を確認のうえ個別に決済のご案内をお送りします。</p>
+  </div>
+</section>
+
+<!-- ⑥ FAQ・不安除去: 未完成の明示・伴走・全額返金特約・前提条件・募集条件5点 -->
+<section>
+  <div class="wrap">
+    <h2>よくある不安について</h2>
+
+    <div class="warn-box">
+      <p><strong>これは完成品ではありません。</strong>開発途中の仕組みを、購入者と一緒に完成させていく
+        「先行開発版」です。外部サービスの仕様変更で機能が変わる可能性があります。収益・フォロワー増を
+        保証するものではありません。</p>
+    </div>
+
+    <dl class="faq">
+      <dt>本当に稼働しなかったら?</dt>
+      <dd>初期セットアップ伴走を受けても自動投稿の稼働に至らなかった場合、購入から30日以内の
+        お申し出で全額返金します(先行開発版特約)。提供開始後の返金は、この特約の場合を除き
+        原則不可となります。</dd>
+
+      <dt>プログラミングの経験がなくても大丈夫?</dt>
+      <dd>大丈夫です。AIハーネス(Claude Code等)の利用環境は必要ですが、未経験でも導入から
+        伴走で支援します。利用料はご自身の負担になります。</dd>
+
+      <dt>どんな人が対象ですか?(募集条件)</dt>
+      <dd>
+        <ol class="conditions">
+          <li>まだ完成品ではないことをご理解いただける方</li>
+          <li>一緒に改善してくれる方</li>
+          <li>使用感のヒアリングにご協力いただける方</li>
+          <li>売りたい商品(または商品案)をお持ちの方</li>
+          <li>数字・成果を事例として公開してよい方(匿名可)</li>
+        </ol>
+      </dd>
+
+      <dt>支払い方法は?</dt>
+      <dd>〔支払方法の確定文言〕</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ⑦ フッター: 特定商取引法に基づく表記 -->
+<footer>
+  <div class="wrap" style="padding: 40px 0;">
+    <h2 style="color:#fff;">特定商取引法に基づく表記</h2>
+    <table>
+      <tr><th>販売事業者</th><td>立木雄一朗</td></tr>
+      <tr><th>連絡先</th><td>t.yurayura@gmail.com</td></tr>
+      <tr><th>販売価格</th><td>4,980円(税込)</td></tr>
+      <tr><th>商品代金以外の必要料金</th><td>なし(通信費・生成AI利用料は購入者負担)</td></tr>
+      <tr><th>支払方法・支払時期</th><td>〔支払方法の確定文言〕</td></tr>
+      <tr><th>提供時期</th><td>決済確認後3日以内にコミュニティ招待と初回ヒアリング日程をご案内します</td></tr>
+      <tr><th>返品・返金</th><td>デジタルコンテンツ+役務の性質上、提供開始後の返金は原則不可。
+        先行開発版特約(稼働に至らなかった場合の30日以内全額返金)は上記のとおりです。</td></tr>
+    </table>
+    <p style="margin-top:24px; font-size:0.75rem; color:#8f8778;">
+      このページは検品前の下書きです(&lt;meta name="robots" content="noindex"&gt;)。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
