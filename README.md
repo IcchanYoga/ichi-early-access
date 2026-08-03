@@ -1,8 +1,8 @@
 # ichi-early-access — 先行開発版 商品ページ(LP)
 
-GitHub Pages で商品ページ(LP)を自前ホスティングするためのリポジトリ。
+商品ページ(LP)を自前ホスティングするためのリポジトリ。
 
-- 公開URL: https://icchanyoga.github.io/ichi-early-access/ (未公開・検品中)
+- **公開URL: https://ichi-early-access.pages.dev/**(Cloudflare Pages・2026-08-03公開)
 - 商品: 先行開発版「音声だけThreads運用キット」(仮称・4,980円・3名限定)
 - 事実の出典・検品台帳: `C:\Users\tyura\HQ_MARKETING_OS\05_products\validating\fact_ledger_lp_20260731.md`
 - 応募フォーム設問リスト: `C:\Users\tyura\HQ_MARKETING_OS\05_products\validating\application_form_questions_20260731.md`
@@ -12,27 +12,42 @@ GitHub Pages で商品ページ(LP)を自前ホスティングするためのリ
 
 ```
 ichi-early-access/
-├─ README.md      このファイル
-├─ .nojekyll       Jekyll無効化(GitHub Pages標準の措置)
-└─ index.html      商品ページ本体(1ファイル完結。直接編集する)
+├─ README.md      このファイル(内部用。公開しない)
+├─ .nojekyll      GitHub Pages時代の名残(Cloudflareでは不要)
+└─ index.html     商品ページ本体(1ファイル完結。直接編集する)
 ```
 
-## 公開前に必ずやること
+## ホスティング(2026-08-03にGitHub PagesからCloudflare Pagesへ変更)
 
-`index.html` 冒頭のHTMLコメント「差し替え一覧」にあるプレースホルダ
-(`〔商品名〕` `〔実績数字〕` `〔応募フォームURL〕` `〔支払方法の確定文言〕`)を、
-`fact_ledger_lp_20260731.md` の該当行を出典にすべて埋めること。
+GitHubの利用規約はPagesを商取引が主目的のサイトの無料ホスティングに使うことを認めていないため、
+**Cloudflare Pages(無料枠で商用可)へ移した**。GitHub Pagesは有効化しない。
 
-差し替え後は必ず `hp-mockup-creation` スキルの `scripts/render.ps1` で
-デスクトップ幅・スマホ幅の両方を再レンダリングし、公開前検収チェック
-(3秒で何の商品か/信頼要素が上にあるか/応募ボタンが探さず見えるか/
-スマホで読めるか/1ページ1ゴールか)を確認してから push すること。
+デプロイは wrangler の直接アップロード方式(Git連携ではないため **push だけでは公開されない**):
 
-editor_in_chief の事実+リーガル二重検品を通過し、運営者の最終承認を得るまでは
-`<meta name="robots" content="noindex">` を外さない。
+```powershell
+# index.html だけを一時フォルダへコピーしてからデプロイする(README等を公開しないため)
+npx wrangler pages deploy <index.htmlだけを置いたフォルダ> --project-name ichi-early-access --branch master --commit-dirty=true
+```
+
+Cloudflareダッシュボードでリポジトリを Git 連携すれば push で自動デプロイにもできる
+(その場合は Production branch を `master`、Build output directory を `/` にする)。
+
+## 公開ページに載せてはいけないもの
+
+- **内部コメント**(検品の経緯・担当名・台帳番号・「確認要」等)。2026-08-03に全削除した。
+  保守メモはこのREADMEに書き、`index.html` にはコメントを残さない
+- **Stripe決済リンク**。CTAは応募フォーム(Googleフォーム)のみへ誘導し、決済は応募条件確認後に
+  運営者が個別案内する(`s2_s3_funnel_design.md`接点3/4)
+- **README.md 自体**(内部パスを含む。デプロイ対象に入れない)
+
+## 更新するときの決まり
+
+- 掲載する数字は必ず実測値に差し替え、**期間と確認元を併記**する(創作禁止)。出典は上記の検品台帳へ記録する
+- 実日数(「今日で◯日目」)は Day 1 = 2026-07-18 起点で数え直す
+- 数字入りの訴求を変更したら、editor_in_chief の事実+リーガル二重検品と運営者承認を経てから反映する
+- 差し替え後は `hp-mockup-creation` スキルの `scripts/render.ps1` でデスクトップ幅・スマホ幅を再レンダリングし、
+  公開前検収(3秒で何の商品か/信頼要素が上にあるか/応募ボタンが探さず見えるか/スマホで読めるか/1ページ1ゴールか)を確認する
 
 ## 注意
 
 - ichi-radio(Podcast配信)とは別リポジトリ。目的が異なる公開物を混在させない
-- Stripe決済リンクはこのページには置かない。CTAは応募フォーム(Googleフォーム)のみへ
-  誘導し、決済は応募条件確認後に運営者が個別案内する(`s2_s3_funnel_design.md`接点3/4)
