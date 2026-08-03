@@ -22,15 +22,14 @@ ichi-early-access/
 GitHubの利用規約はPagesを商取引が主目的のサイトの無料ホスティングに使うことを認めていないため、
 **Cloudflare Pages(無料枠で商用可)へ移した**。GitHub Pagesは有効化しない。
 
-デプロイは wrangler の直接アップロード方式(Git連携ではないため **push だけでは公開されない**):
+デプロイは wrangler の直接アップロード方式(Git連携ではないため **push だけでは公開されない**)。
+**このフォルダで `.\deploy.ps1` を実行するだけ**でよい(index.htmlだけを送り、公開前に
+決済リンク混入・未記入プレースホルダ・内部コメントの3点を自動で検査して止める)。
 
-```powershell
-# index.html だけを一時フォルダへコピーしてからデプロイする(README等を公開しないため)
-npx wrangler pages deploy <index.htmlだけを置いたフォルダ> --project-name ichi-early-access --branch master --commit-dirty=true
-```
-
-Cloudflareダッシュボードでリポジトリを Git 連携すれば push で自動デプロイにもできる
-(その場合は Production branch を `master`、Build output directory を `/` にする)。
+Git連携(pushで自動デプロイ)にしたい場合: **直接アップロードで作ったプロジェクトは後から
+Git連携へ変換できない**ため、同名でプロジェクトを作り直す必要がある(その間ページが見えなくなる)。
+GitHub連携の認可はブラウザでの操作が必須。募集期間中は実施しない。
+実施するなら Production branch = `master` / Build output directory = `/`。
 
 ## 公開ページに載せてはいけないもの
 
